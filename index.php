@@ -1,1 +1,1 @@
-<?php header( 'Location: /the_trys/lobby.html' ) ;  ?>
+<?php header( 'Location: /the_tris/lobby.html' ) ;  ?>
