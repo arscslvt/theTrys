@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>The Tris: Lobby</title>
+    <link type="text/css" rel="stylesheet" href="static/style.css">
+    <script src="static/lobby.js"></script>
+    <audio id="audio" autoplay loop>
+        <source src="static/assets/audio/backmusic.mp3" type="audio/mp3">
+    </audio>
+</head>
+
+<body>
+    <div class="header">
+        <h1>The <span style="font-size: 100px;">TRYS</span></h1>
+    </div>
+    <div class="button" onclick="newMatch()">New Match</div>
+    <div class="muteButton" id="audioSym" onclick="muteAudio()">🔊</div>
+
+    <div id="newMatch">
+        <div class="close" onclick="closeNewMatch()">x</div>
+        <div class="player">
+            <div class="chPlayer" onclick="name(1)">
+                <div class="singlePlayerIcon"></div>1 Player
+            </div>
+            <div class="chPlayer" onclick="name(2)">
+                <div class="multiPlayerIcon"></div>2 Player
+            </div>
+        </div>
+    </div>
+
+    <div id="game">
+        <div class="points">
+            <p id="yNametag">Your<br>points</p>
+            <h1 id="yPoints">0</h1>
+        </div>
+        <div id="gamePage">
+            <div class="grid">
+                <div id="pad1" class="" onclick="slotSelect('1')"></div>
+                <div id="pad2" class="" onclick="slotSelect('2')"></div>
+                <div id="pad3" class="" onclick="slotSelect('3')"></div>
+                <div id="pad4" class="" onclick="slotSelect('4')"></div>
+                <div id="pad5" class="" onclick="slotSelect('5')"></div>
+                <div id="pad6" class="" onclick="slotSelect('6')"></div>
+                <div id="pad7" class="" onclick="slotSelect('7')"></div>
+                <div id="pad8" class="" onclick="slotSelect('8')"></div>
+                <div id="pad9" class="" onclick="slotSelect('9')"></div>     
+            </div>
+        </div>
+        <div class="points">
+            <p id="oNametag">Computer<br>points</p>
+            <h1 id="oPoints">0</h1>
+        </div>
+    </div>
+
+    <div id="onePlayerName">
+        <div class="inputAlert">
+            <h2>Choose your name</h2>
+            <input type="text" name="nametag" id="nametag" maxlength="10" placeholder="Nametag" required><br>
+            <input type="button" value="0k" onclick="play(3)">
+        </div>
+    </div>
+    <div id="twoPlayersName">
+        <div class="inputAlert">
+            <h2>Choose your names</h2>
+            <input type="text" name="nametagP" id="nametagP" maxlength="10" placeholder="Player 1" required><br>
+            <input type="text" name="nametagO" id="nametagO" maxlength="10" placeholder="Player 2" required><br>
+            <input type="button" value="0k" onclick="play(2)">
+        </div>
+    </div>
+    <div id="winner">
+        <div class="inputAlert">
+            <h1><span id="winName"></span><br>IS THE WINNER!</h1>
+            <input type="button" value="Next match!" onclick="hideWinner()">
+        </div>
+    </div>
+</body>
+</html>
